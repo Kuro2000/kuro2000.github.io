@@ -1,0 +1,97 @@
+/* Hallmark · pre-emit critique: P5 H4 E4 S5 R4 V4 */
+/* Hallmark · genre: modern-minimal · macrostructure: Marquee Hero (name-led) · H1 hero knobs: size=xxl, alignment=left-bias, underlay=rule-below, ctas-in-fold=yes
+ * theme: custom · vibe: "warm ivory, book-cloth terracotta, Claude-like calm"
+ * paper: oklch(95% 0.01 85) · accent: oklch(48% 0.13 42) (deep terracotta, contrast-tuned for link text)
+ * display: Space Grotesk · body: Geist · outlier: Geist Mono (wordmark + stat numerals)
+ * axes: light / geometric-sans / warm — differs from previous run (light / geometric-sans / cool) on accent hue
+ * structure: studied-DNA (source: url https://gerlogu.com/ · structure only — palette + type are user's own)
+ * observed-at-source: Poppins + Spline Sans · WordPress 6.9 · teal on dark photo hero · rhythm: unknown (URL mode)
+ * skipped-from-source: looping typewriter caret, Poppins, centred 100vh hero, 4-col social footer
+ * enrichment: none (typography-only hero) · polish: HP3 cursor-spotlight (hero-scoped, reduced-motion pinned 50%/30%)
+ * nav: N5 Floating pill · footer: Ft5 Statement · studied: yes · v2 retheme+entry-page 2026-07-16
+ * contrast: pass (40–41) · slop: pass (42–45) · honest: pass (46) · chrome: pass (47) · tokens: pass (48)
+ * responsive: pass (49) · icons: pass (30) · mobile: pass (34*, 49, 50–57)
+ * (*34: overflow-x clip on body only — root-level clip blanks scrolled paint in some embedded Chromium builds)
+ *
+ * v3 · 2026-07-16 · section-scope: .intro → .about ("About me")
+ * 7:3 prose/portrait grid · skill briefs as term+gloss rows (5:7, hairline-separated, ▸ accent tick
+ * reusing the house .skills marker) · portrait 4:5, hairline + radius-md matching .case-row__media
+ * copy: 4 user-designated highlight skills; glosses sourced from content/master-content.md only
+ * ("8 mentees" from docs/website-brief.md dropped — master-content says "mentored 4 interns")
+ * no new tokens · no new motion · verified 320/375/414/768/1280 — no h-scroll, no two-line affordances
+ * dropped: sticky portrait (measured −2px travel — body 439px vs portrait 441px; never engaged)
+ */
+
+:root {
+  /* ---- colour · custom OKLCH palette · warm ivory + terracotta ---- */
+  --color-paper:       oklch(95% 0.010 85);
+  --color-paper-2:     oklch(92.5% 0.012 85);
+  --color-paper-3:     oklch(89.5% 0.014 85);
+  --color-ink:         oklch(22% 0.010 60);
+  --color-ink-2:       oklch(34% 0.012 55);
+  --color-muted:       oklch(44% 0.014 50);
+  --color-rule:        oklch(84% 0.014 80);
+  --color-rule-2:      oklch(88% 0.012 80);
+  --color-accent:      oklch(48% 0.13 42);    /* deep book-cloth terracotta */
+  --color-accent-deep: oklch(40% 0.12 42);    /* hover state of accent fills */
+  --color-accent-tint: oklch(88% 0.030 60);   /* quiet peach surface */
+  --color-accent-ink:  oklch(96% 0.008 85);   /* text on accent fills (accent L ≤ 50 → paper) */
+  --color-focus:       oklch(54% 0.15 42);
+
+  /* ---- type ---- */
+  --font-display: "Space Grotesk", "Helvetica Neue", ui-sans-serif, sans-serif;
+  --font-body:    "Geist", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* scale · major third 1.25 */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1rem;
+  --text-md:   1.25rem;
+  --text-lg:   1.5625rem;
+  --text-xl:   1.9531rem;
+  --text-2xl:  2.4414rem;
+  --text-3xl:  3.0518rem;
+  --text-display:   clamp(2.75rem, 5vw + 1rem, 5.25rem);
+  --text-marquee:   clamp(3.25rem, 10.5vw, 10rem);
+
+  /* ---- space · 4pt scale ---- */
+  --space-3xs: 0.125rem;
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+  --page-gutter: clamp(1.25rem, 5vw, 4rem);
+  --measure: 62ch;
+
+  /* ---- rules · radius ---- */
+  --rule-hair: 1px;
+  --rule-thick: 2px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-pill: 999px;
+
+  /* ---- motion ---- */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:  cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long:  420ms;
+
+  /* ---- depth ---- */
+  --shadow-whisper: 0 1px 2px oklch(25% 0.02 50 / 0.06);
+  --shadow-pill: 0 8px 24px -12px oklch(25% 0.03 50 / 0.25);
+  --z-base: 1;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-modal: 400;
+  --z-toast: 500;
+  --z-tooltip: 600;
+}
